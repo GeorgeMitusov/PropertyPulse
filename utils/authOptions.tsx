@@ -1,7 +1,7 @@
 import connectDB from "@/config/database";
 import User from "@/models/User";
 import GoogleProvider from "next-auth/providers/google";
-import { NextAuthOptions, Session } from "next-auth";
+import { NextAuthOptions } from "next-auth";
 
 export const authOptions: NextAuthOptions = {
   providers: [
@@ -33,7 +33,6 @@ export const authOptions: NextAuthOptions = {
       }
       return true;
     },
-    // async session({ session }: { session: Session })
     async session({ session }: any) {
       const user = await User.findOne({ email: session.user?.email });
       if (user) {

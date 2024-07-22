@@ -26,6 +26,7 @@ const MainLayout = ({ children }: MainLayoutProp) => {
     <GlobalProvider>
       <AuthProvider>
         <html lang="en">
+          <link rel="icon" href="/favicon/favicon.ico" />
           <body>
             <Navbar />
             <main>{children}</main>
